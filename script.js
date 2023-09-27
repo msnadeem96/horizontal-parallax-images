@@ -17,7 +17,7 @@
         if (isMouseDown === false)
             return false;
 
-        const change = -e.movementX / window.screen.availWidth * 100
+        const change = -e.movementX / window.screen.availWidth * 200
 
         trackPos += change
 

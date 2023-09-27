@@ -38,11 +38,11 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    transition: all 1500ms ease-out;
+    transition: all 1200ms ease-out;
 }
 
 .image-container {
-    width: 300px;
+    width: 400px;
     height: 500px;
 }
 
@@ -52,7 +52,7 @@ body {
     object-fit: cover;
     opacity: .95;
     object-position: 0 50%;
-    transition: all 1500ms ease-out;
+    transition: all 1200ms ease-out;
 }
 
 .image:hover {
