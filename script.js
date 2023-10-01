@@ -8,15 +8,9 @@
     const track = document.getElementById('track')
     const images = document.getElementsByClassName('image')
 
-    const mouseDown = e => {
-        isMouseDown = true
-    }
-
-    const mouseUp = e => {
-        isMouseDown = false
-    }
-    const moveTrack = e => {
-        const change = -e.movementX / window.screen.availWidth * 200
+    const moveTrack = movex => {
+        console.log(movex)
+        const change = -movex / window.screen.availWidth * 200
 
         trackPos += change
 
@@ -32,12 +26,19 @@
         }
     }
 
+    const mouseDown = e => {
+        isMouseDown = true
+    }
+
+    const mouseUp = e => {
+        isMouseDown = false
+    }
 
     const mouseMove = e => {
         if (isMouseDown === false)
             return false;
 
-        moveTrack(e)
+        moveTrack(e.movementX)
     }
 
 
@@ -57,7 +58,7 @@
         e.movementX *= touch.pageX - previousTouch.pageX;
         e.movementY *= touch.pageY - previousTouch.pageY;
 
-        moveTrack(e)
+        moveTrack(e.movementX)
     }
 
     const touchStart = e => {
@@ -73,5 +74,11 @@
     window.addEventListener('touchstart', touchStart)
     window.addEventListener('touchEnd', touchEnd)
     window.addEventListener('touchmove', touchMove)
+
+    setInterval(() => {
+        // isMouseDown = true
+
+        // moveTrack(-1)
+    }, 100)
 })()
 
